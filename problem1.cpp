@@ -12,16 +12,6 @@ using namespace std;
 /* NAME:              */
 /**********************/
 
-double sqrt(int a, int b)
-{
-	int tmp=1;
-	for (int i = 0; i < b; i++)
-	{
-		tmp *= a;
-	}
-	return tmp;
-}
-
 int main(){
 	int loopNum;
 
@@ -45,10 +35,17 @@ int main(){
         // To fix the precision of floating numbers
         outfile << setprecision(3) << fixed;
 
-		double result_x1 = a * (1 / 3) * sqrt(x1, 3) + b * (1 / 2) * sqrt(x1, 2) + c * x1;
-		double result_x0 = a * (1 / 3) * sqrt(x0, 3) + b * (1 / 2) * sqrt(x0, 2) + c * x0;
-		outfile << (result_x1 - result_x0)\n;
-		
+		/*
+			Your Code
+			Write into outfile
+			ex) outfile << "Hello, World!\n";
+
+			Type casting
+			ex) double d = 2;			// d = 2.0
+			double d = (double)2;		// d = 2.0
+			double d = 5 / 2;			// d = 2.0
+			double d = (double)5 / 2;	// d = 2.5
+		*/
 	}
 
 	outfile.close();
