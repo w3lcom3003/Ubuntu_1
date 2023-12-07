@@ -31,7 +31,6 @@ struct Pokemon
 void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd, int count1[], int count2[])
 {
 	// 첫번째 줄 출력
-	cout << endl;
 	cout << "+";
 	for (int i = 0; i < 61; i++) {
 		cout << "-";
@@ -106,7 +105,6 @@ void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd, int count1[], int count2
 void frame2(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd, int count1[], int count2[])
 {
 	// 첫번째 줄 출력
-	cout << endl;
 	cout << "+";
 	for (int i = 0; i < 61; i++) {
 		cout << "-";
@@ -348,7 +346,7 @@ int main()
 			// 스킬 사용 가능 횟수가 남았는지 검사하기
 			if (Pokemon_1st.skills[use_skill].Count == 0)
 			{
-				cout << Pokemon_1st.Name << " failed to perform " << Pokemon_1st.skills[use_skill].Name << endl;
+				cout << Pokemon_1st.Name << " failed to perform " << Pokemon_1st.skills[use_skill].Name << "." << endl << endl;
 				frame2(Pokemon_1st, Pokemon_2nd, count1, count2);
 				continue;
 			}
@@ -357,28 +355,33 @@ int main()
 			{
 				cout << Pokemon_1st.Name << " used " << Pokemon_1st.skills[use_skill].Name << "." << endl;
 				Pokemon_1st.skills[use_skill].Count--;
-				cout << "The attack was " << effeiciency_1 << "." << endl;
+				cout << "The attack was " << effeiciency_1 << "." << endl << endl;
 
 				// 상성이 불리하다면 데미지를 3 감소시키기
 				if (effeiciency_1 == "not very effective")
 				{
-					Pokemon_1st.skills[use_skill].Damage = Pokemon_1st.skills[use_skill].Damage - 3;
+					int Low_Damage = Pokemon_1st.skills[use_skill].Damage - 3;
+					Pokemon_2nd.HP = Pokemon_2nd.HP - Low_Damage;
 				}
 
 				// 상성이 유리하다면 데미지를 5 증가시키기
 				else if (effeiciency_1 == "super effective")
 				{
-					Pokemon_1st.skills[use_skill].Damage = Pokemon_1st.skills[use_skill].Damage + 5;
+					int High_Damage = Pokemon_1st.skills[use_skill].Damage + 5;
+					Pokemon_2nd.HP = Pokemon_2nd.HP - High_Damage;
 				}
 
-				// 상대 포켓몬의 HP 감소시키기
-				Pokemon_2nd.HP = Pokemon_2nd.HP - Pokemon_1st.skills[use_skill].Damage;
+				// 상성이 없는 경우 원래 데미지만큼 감소시키기
+				else
+				{
+					Pokemon_2nd.HP = Pokemon_2nd.HP - Pokemon_1st.skills[use_skill].Damage;
+				}
+
 
 				// HP가 0이하면 게임 종료하기
 				// 두번째 포켓몬이 진 경우
 				if (Pokemon_2nd.HP <= 0)
 				{
-					cout << endl;
 					cout << "===============================================================" << endl;
 					cout << "Match Result: " << Pokemon_1st.Name << " defeats " << Pokemon_2nd.Name << endl;
 					exit(1);
@@ -396,7 +399,7 @@ int main()
 			// 스킬 사용 가능 횟수가 남았는지 검사하기
 			if (Pokemon_2nd.skills[use_skill].Count == 0)
 			{
-				cout << Pokemon_2nd.Name << " failed to perform " << Pokemon_2nd.skills[use_skill].Name << endl;
+				cout << Pokemon_2nd.Name << " failed to perform " << Pokemon_2nd.skills[use_skill].Name << "." << endl << endl;
 				frame1(Pokemon_1st, Pokemon_2nd, count1, count2);
 				continue;
 			}
@@ -405,28 +408,32 @@ int main()
 			{
 				cout << Pokemon_2nd.Name << " used " << Pokemon_2nd.skills[use_skill].Name << "." << endl;
 				Pokemon_2nd.skills[use_skill].Count--;
-				cout << "The attack was " << effeiciency_2 << "." << endl;
+				cout << "The attack was " << effeiciency_2 << "." << endl << endl;
 
 				// 상성이 불리하다면 데미지를 3 감소시키기
 				if (effeiciency_2 == "not very effective")
 				{
-					Pokemon_2nd.skills[use_skill].Damage = Pokemon_2nd.skills[use_skill].Damage - 3;
+					int Low_Damage = Pokemon_2nd.skills[use_skill].Damage - 3;
+					Pokemon_1st.HP = Pokemon_1st.HP - Low_Damage;
 				}
 
 				// 상성이 유리하다면 데미지를 5 증가시키기
 				else if (effeiciency_2 == "super effective")
 				{
-					Pokemon_2nd.skills[use_skill].Damage = Pokemon_2nd.skills[use_skill].Damage + 5;
+					int High_Damage = Pokemon_2nd.skills[use_skill].Damage + 5;
+					Pokemon_1st.HP = Pokemon_1st.HP - High_Damage;
 				}
 
-				// 상대 포켓몬의 HP 감소시키기
-				Pokemon_1st.HP = Pokemon_1st.HP - Pokemon_2nd.skills[use_skill].Damage;
+				// 상성이 없는 경우 원래 데미지만큼 감소시키기
+				else
+				{
+					Pokemon_1st.HP = Pokemon_1st.HP - Pokemon_2nd.skills[use_skill].Damage;
+				}
 
 				// HP가 0 이하가 되면 게임 종료하기
 				// 첫번째 포켓몬이 진 경우
 				if (Pokemon_1st.HP <= 0)
 				{
-					cout << endl;
 					cout << "===============================================================" << endl;
 					cout << "Match Result: " << Pokemon_2nd.Name << " defeats " << Pokemon_1st.Name << endl;
 					exit(1);
