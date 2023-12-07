@@ -28,7 +28,7 @@ struct Pokemon
 
 // 첫번째 포켓몬의 공격 차례 때 표시창
 // setw 함수를 통해 폭을 고정하고, left를 통해 출력하려는 정보를 왼쪽으로 정렬했다.
-void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd)
+void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd, int count1[], int count2[])
 {
 	// 첫번째 줄 출력
 	cout << endl;
@@ -38,7 +38,7 @@ void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd)
 	}
 	cout << "+" << endl;
 	// 이름, 학번, 전공 출력
-	cout << "| " << left << setw(60) << "2023149002 유승민 인공지능학과" << "|" << endl;
+	cout << "| " << left << setw(60) << "2023000000 OOP Computer Science" << "|" << endl;
 	cout << "+";
 	for (int i = 0; i < 30; i++) {
 		cout << "-";
@@ -69,25 +69,25 @@ void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd)
 	cout << "| " << left << setw(28) << "(0) " + Pokemon_1st.skills[0].Name << " | " << left << setw(28) << "(0) " + Pokemon_2nd.skills[0].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[0].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[0].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[0].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[0].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[0].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[0].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[0].Count)+"("+to_string(count1[0]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[0].Count) + "(" + to_string(count2[0]) + ")" << " |" << endl;
 
 	// 1번째 스킬
 	cout << "| " << left << setw(28) << "(1) " + Pokemon_1st.skills[1].Name << " | " << left << setw(28) << "(1) " + Pokemon_2nd.skills[1].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[1].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[1].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[1].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[1].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[1].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[1].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[1].Count) + "(" + to_string(count1[1]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[1].Count) + "(" + to_string(count2[1]) + ")" << " |" << endl;
 
 	// 2번째 스킬
 	cout << "| " << left << setw(28) << "(2) " + Pokemon_1st.skills[2].Name << " | " << left << setw(28) << "(2) " + Pokemon_2nd.skills[2].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[2].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[2].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[2].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[2].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[2].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[2].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[2].Count) + "(" + to_string(count1[2]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[2].Count) + "(" + to_string(count2[2]) + ")" << " |" << endl;
 
 	// 3번째 스킬
 	cout << "| " << left << setw(28) << "(3) " + Pokemon_1st.skills[3].Name << " | " << left << setw(28) << "(3) " + Pokemon_2nd.skills[3].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[3].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[3].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[3].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[3].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[3].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[3].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[3].Count) + "(" + to_string(count1[3]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[3].Count) + "(" + to_string(count2[3]) + ")" << " |" << endl;
 
 	// 마지막 줄 출력
 	cout << "+";
@@ -103,7 +103,7 @@ void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd)
 
 // 두번째 포켓몬의 공격 차례 때 표시창
 // setw 함수를 통해 폭을 고정하고, left를 통해 출력하려는 정보를 왼쪽으로 정렬했다.
-void frame2(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd)
+void frame2(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd, int count1[], int count2[])
 {
 	// 첫번째 줄 출력
 	cout << endl;
@@ -113,7 +113,7 @@ void frame2(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd)
 	}
 	cout << "+" << endl;
 	// 이름, 학번, 전공 출력
-	cout << "| " << left << setw(60) << "2023149002 유승민 인공지능학과" << "|" << endl;
+	cout << "| " << left << setw(60) << "2023000000 OOP Computer Science" << "|" << endl;
 	cout << "+";
 	for (int i = 0; i < 30; i++) {
 		cout << "-";
@@ -144,25 +144,25 @@ void frame2(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd)
 	cout << "| " << left << setw(28) << "(0) " + Pokemon_1st.skills[0].Name << " | " << left << setw(28) << "(0) " + Pokemon_2nd.skills[0].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[0].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[0].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[0].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[0].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[0].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[0].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[0].Count) + "(" + to_string(count1[0]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[0].Count) + "(" + to_string(count2[0]) + ")" << " |" << endl;
 
 	// 1번째 스킬
 	cout << "| " << left << setw(28) << "(1) " + Pokemon_1st.skills[1].Name << " | " << left << setw(28) << "(1) " + Pokemon_2nd.skills[1].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[1].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[1].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[1].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[1].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[1].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[1].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[1].Count) + "(" + to_string(count1[1]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[1].Count) + "(" + to_string(count2[1]) + ")" << " |" << endl;
 
 	// 2번째 스킬
 	cout << "| " << left << setw(28) << "(2) " + Pokemon_1st.skills[2].Name << " | " << left << setw(28) << "(2) " + Pokemon_2nd.skills[2].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[2].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[2].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[2].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[2].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[2].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[2].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[2].Count) + "(" + to_string(count1[2]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[2].Count) + "(" + to_string(count2[2]) + ")" << " |" << endl;
 
 	// 3번째 스킬
 	cout << "| " << left << setw(28) << "(3) " + Pokemon_1st.skills[3].Name << " | " << left << setw(28) << "(3) " + Pokemon_2nd.skills[3].Name << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Type: " + Pokemon_1st.skills[3].Type << " | " << left << setw(28) << "    - Type: " + Pokemon_2nd.skills[3].Type << " |" << endl;
 	cout << "| " << left << setw(28) << "    - Damage: " + to_string(Pokemon_1st.skills[3].Damage) << " | " << left << setw(28) << "    - Damage: " + to_string(Pokemon_2nd.skills[3].Damage) << " |" << endl;
-	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[3].Count) << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[3].Count) << " |" << endl;
+	cout << "| " << left << setw(28) << "    - Count: " + to_string(Pokemon_1st.skills[3].Count) + "(" + to_string(count1[3]) + ")" << " | " << left << setw(28) << "    - Count: " + to_string(Pokemon_2nd.skills[3].Count) + "(" + to_string(count2[3]) + ")" << " |" << endl;
 
 	// 마지막 줄 출력
 	cout << "+";
@@ -242,9 +242,9 @@ int main()
 	int a, b;
 
 	// 배틀 할 두 포켓몬을 선택한다.
-	cout << "Choose a Pokemon (0~4): ";
+	cout << "Choose a Pokemon(0~4): ";
 	cin >> a;
-	cout << "Choose another Pokemon (0~4): ";
+	cout << "Choose another Pokemon(0~4): ";
 	cin >> b;
 
 	// 만약 두 포켓몬이 같다면 오류 메세지를 출력하고
@@ -260,8 +260,21 @@ int main()
 	Pokemon Pokemon_1st = Pokemons[a];
 	Pokemon Pokemon_2nd = Pokemons[b];
 
+	// 초기 스킬 횟수 저장을 위해 초깃값을 저장할 변수 생성
+	int count1[3] = {}; 
+	int count2[3] = {};
+	for (int i = 0; i < 4; i++)
+	{
+		count1[i]= Pokemon_1st.skills[i].Count;
+	}
+
+	for (int i = 0; i < 4; i++)
+	{
+		count2[i] = Pokemon_2nd.skills[i].Count;
+	}
+
 	// 배틀 시작 창 출력
-	frame1(Pokemon_1st, Pokemon_2nd);
+	frame1(Pokemon_1st, Pokemon_2nd,count1, count2);
 
 
 	// 배틀 시작
@@ -336,7 +349,7 @@ int main()
 			if (Pokemon_1st.skills[use_skill].Count == 0)
 			{
 				cout << Pokemon_1st.Name << " failed to perform " << Pokemon_1st.skills[use_skill].Name << endl;
-				frame2(Pokemon_1st, Pokemon_2nd);
+				frame2(Pokemon_1st, Pokemon_2nd, count1, count2);
 				continue;
 			}
 			// 스킬 사용 안내 창 출력
@@ -366,13 +379,13 @@ int main()
 				if (Pokemon_2nd.HP <= 0)
 				{
 					cout << endl;
-					cout << "==============================================================" << endl;
-					cout << "Match Resut: " << Pokemon_1st.Name << " defeats " << Pokemon_2nd.Name << endl;
+					cout << "===============================================================" << endl;
+					cout << "Match Result: " << Pokemon_1st.Name << " defeats " << Pokemon_2nd.Name << endl;
 					exit(1);
 				}
 
 				// 상태창 출력
-				frame2(Pokemon_1st, Pokemon_2nd);
+				frame2(Pokemon_1st, Pokemon_2nd, count1, count2);
 			}
 			
 		}
@@ -384,7 +397,7 @@ int main()
 			if (Pokemon_2nd.skills[use_skill].Count == 0)
 			{
 				cout << Pokemon_2nd.Name << " failed to perform " << Pokemon_2nd.skills[use_skill].Name << endl;
-				frame1(Pokemon_1st, Pokemon_2nd);
+				frame1(Pokemon_1st, Pokemon_2nd, count1, count2);
 				continue;
 			}
 			// 스킬 사용 안내 창 출력
@@ -414,13 +427,13 @@ int main()
 				if (Pokemon_1st.HP <= 0)
 				{
 					cout << endl;
-					cout << "==============================================================" << endl;
-					cout << "Match Resut: " << Pokemon_2nd.Name << " defeats " << Pokemon_1st.Name << endl;
+					cout << "===============================================================" << endl;
+					cout << "Match Result: " << Pokemon_2nd.Name << " defeats " << Pokemon_1st.Name << endl;
 					exit(1);
 				}
 
 				// 상태창 출력
-				frame1(Pokemon_1st, Pokemon_2nd);
+				frame1(Pokemon_1st, Pokemon_2nd, count1, count2);
 			}
 			
 		}
