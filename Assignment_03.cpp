@@ -37,7 +37,7 @@ void frame1(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd, int count1[], int count2
 	}
 	cout << "+" << endl;
 	// 이름, 학번, 전공 출력
-	cout << "| " << left << setw(60) << "2023000000 OOP Computer Science" << "|" << endl;
+	cout << "| " << left << setw(60) << "2023149002 RyuSeungMin Dept of A.I" << "|" << endl;
 	cout << "+";
 	for (int i = 0; i < 30; i++) {
 		cout << "-";
@@ -111,7 +111,7 @@ void frame2(Pokemon& Pokemon_1st, Pokemon& Pokemon_2nd, int count1[], int count2
 	}
 	cout << "+" << endl;
 	// 이름, 학번, 전공 출력
-	cout << "| " << left << setw(60) << "2023000000 OOP Computer Science" << "|" << endl;
+	cout << "| " << left << setw(60) << "2023149002 RyuSeungMin Dept of A.I" << "|" << endl;
 	cout << "+";
 	for (int i = 0; i < 30; i++) {
 		cout << "-";
@@ -259,8 +259,8 @@ int main()
 	Pokemon Pokemon_2nd = Pokemons[b];
 
 	// 초기 스킬 횟수 저장을 위해 초깃값을 저장할 변수 생성
-	int count1[3] = {}; 
-	int count2[3] = {};
+	int count1[4] = {}; 
+	int count2[4] = {};
 	for (int i = 0; i < 4; i++)
 	{
 		count1[i]= Pokemon_1st.skills[i].Count;
