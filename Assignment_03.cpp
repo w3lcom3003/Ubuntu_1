@@ -288,7 +288,7 @@ int main()
 		// 두 포켓몬의 상성 결정하기
 		// 두 번째 포켓몬에 대한 첫번째 포켓몬의 스킬 상성을 efficiney_1에 저장
 		string effeiciency_1 = "effective";
-		if (Pokemon_1st.skills[use_skill].Type == "electric") {
+		if (Pokemon_1st.skills[use_skill].Type == "Electric") {
 			if (Pokemon_2nd.Type == "Ground" || Pokemon_2nd.Type == "Electric" || Pokemon_2nd.Type == "Glass") {
 				effeiciency_1 = "not very effective";
 			}
@@ -309,6 +309,22 @@ int main()
 				effeiciency_1 = "not very effective";
 			}
 			else if (Pokemon_2nd.Type == "Glass") {
+				effeiciency_1 = "super effective";
+			}
+		}
+		else if (Pokemon_1st.skills[use_skill].Type == "Ground") {
+			if (Pokemon_2nd.Type == "Glass") {
+				effeiciency_1 = "not very effective";
+			}
+			else if (Pokemon_2nd.Type == "Electric" || Pokemon_2nd.Type == "Fire") {
+				effeiciency_1 = "super effective";
+			}
+		}
+		else if (Pokemon_1st.skills[use_skill].Type == "Glass") {
+			if (Pokemon_2nd.Type == "Glass" || Pokemon_2nd.Type == "Ground" || Pokemon_2nd.Type == "Fire") {
+				effeiciency_1 = "not very effective";
+			}
+			else if (Pokemon_2nd.Type == "Water") {
 				effeiciency_1 = "super effective";
 			}
 		}
@@ -335,6 +351,22 @@ int main()
 				effeiciency_2 = "not very effective";
 			}
 			else if (Pokemon_1st.Type == "Glass") {
+				effeiciency_2 = "super effective";
+			}
+		}
+		else if (Pokemon_2nd.skills[use_skill].Type == "Ground") {
+			if (Pokemon_1st.Type == "Glass") {
+				effeiciency_2 = "not very effective";
+			}
+			else if (Pokemon_1st.Type == "Electric" || Pokemon_1st.Type == "Fire") {
+				effeiciency_2 = "super effective";
+			}
+		}
+		else if (Pokemon_2nd.skills[use_skill].Type == "Glass") {
+			if (Pokemon_1st.Type == "Glass" || Pokemon_1st.Type == "Ground" || Pokemon_1st.Type == "Fire") {
+				effeiciency_2 = "not very effective";
+			}
+			else if (Pokemon_1st.Type == "Water") {
 				effeiciency_2 = "super effective";
 			}
 		}
@@ -442,11 +474,6 @@ int main()
 				// 상태창 출력
 				frame1(Pokemon_1st, Pokemon_2nd, count1, count2);
 			}
-			
-		}
-
-		
-		
+		}	
 	}
-	
 }
