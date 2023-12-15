@@ -1,8 +1,10 @@
 all : $(TARGET)
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $@
  
-$(TARGET) :
+$(TARGET) :$(CXX) $(CXXFLAGS) -c $< -o $@
 
-run :
+run :./$(EXECUTABLE)
 
-clean :
+clean :rm -f $(OBJECTS) $(EXECUTABLE)
 	
